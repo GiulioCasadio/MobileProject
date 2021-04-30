@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 20;
-    public float touchSpeed = 5;
+    public float speed = 20f;
+    private float touchSpeed = 5;
+
+    public Joystick joy;
+
     private Rigidbody rb;
-    private Vector3 rot_ini;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 gravity = new Vector3();
+        touchSpeed = joy.Horizontal * speed;
+
+        /*Vector3 gravity = new Vector3();
 
         if (Input.GetKeyDown(KeyCode.Escape))   // Chiusura app
             Application.Quit();
@@ -37,6 +41,6 @@ public class PlayerMovement : MonoBehaviour
                 gravity.z = touchSpeed;
             else
                 gravity.z = -touchSpeed;
-        }
+        }*/
     }
 }
