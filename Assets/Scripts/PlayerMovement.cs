@@ -4,6 +4,31 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public float speed = 20f;
+    public Joystick joy;
+
+    Vector3 move;
+    private Rigidbody rb;
+
+    void Update()
+    {
+        move.x = joy.Horizontal;
+        move.y = joy.Vertical;
+        move.z = 0;
+
+        float hAxis = joy.Horizontal;//x axis
+        float vAxis = joy.Vertical;//y axis
+        float zAxis = Mathf.Atan2(hAxis, vAxis) * Mathf.Rad2Deg;
+        transform.eulerAngles = new Vector3(0, 0, -zAxis);
+    }
+
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + move * speed * Time.fixedDeltaTime);
+    }
+
+    /*
     public float speed = 20f;
     private float touchSpeed = 5;
 
@@ -41,6 +66,6 @@ public class PlayerMovement : MonoBehaviour
                 gravity.z = touchSpeed;
             else
                 gravity.z = -touchSpeed;
-        }*/
-    }
+        }
+    }*/
 }

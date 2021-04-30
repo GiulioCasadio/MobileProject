@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 555216660535930049}
   StringsBanks:
   - {fileID: 4188936318020448236}
-  stringsBankWriteTime: 637553805300995036
+  stringsBankWriteTime: 637554045536157962
   cacheVersion: 6
 --- !u!114 &555216660535930049
 MonoBehaviour:
@@ -39,7 +39,7 @@ MonoBehaviour:
   Path: ../../../Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637553805299696243
+  lastModified: 637554045536068606
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -58,7 +58,7 @@ MonoBehaviour:
   Path: ../../../Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637553805300995036
+  lastModified: 637554045536157962
   LoadResult: 0
   FileSizes:
   - Name: Desktop

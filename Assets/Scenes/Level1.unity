@@ -215,9 +215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 159937455}
-  - component: {fileID: 159937458}
   - component: {fileID: 159937457}
-  - component: {fileID: 159937456}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -240,22 +238,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &159937456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159937454}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97b25d59a36f628468a85bab67e59c50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitude: 2.15
-  lenght: 2
-  speed: 1
-  offset: 1
 --- !u!23 &159937457
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -297,14 +279,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &159937458
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159937454}
-  m_Mesh: {fileID: 0}
 --- !u!1 &289304346
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa3e987325b9864d865b1ac864c92f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 0.1
   joy: {fileID: 520289652}
 --- !u!4 &420974568
 Transform:
@@ -460,7 +434,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420974565}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b37b77f03b1b1e4ba493ef7889d3896, type: 3}
   m_Name: 
@@ -550,11 +524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 158
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 143
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -626,10 +600,29 @@ Rigidbody:
   m_Drag: 0.01
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
+--- !u!95 &1209994022
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209994018}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abc5721bc28793f4d8508ce8e36bd39a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1238449244
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,11 +795,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 866c7b03e0bdb614cb37357a4fb56aa7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.054207087
+      value: -0.05420709
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 866c7b03e0bdb614cb37357a4fb56aa7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6517136
+      value: -2.3017132
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 866c7b03e0bdb614cb37357a4fb56aa7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -869,7 +862,6 @@ GameObject:
   - component: {fileID: 1493323792}
   - component: {fileID: 1493323795}
   - component: {fileID: 1493323794}
-  - component: {fileID: 1493323793}
   - component: {fileID: 1493323796}
   m_Layer: 0
   m_Name: Piano orizzonte
@@ -892,19 +884,6 @@ Transform:
   m_Father: {fileID: 159937455}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1493323793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493323791}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 518d20c9e0e21074194ae2b2abda0d13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshf: {fileID: 0}
 --- !u!23 &1493323794
 MeshRenderer:
   m_ObjectHideFlags: 0
