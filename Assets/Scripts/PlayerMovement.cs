@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Game")]
     public Joystick joy;
+    public GameObject ship;
     public float speed = 20f;
 
     [Header("Hud")]
@@ -22,9 +23,10 @@ public class PlayerMovement : MonoBehaviour
     //public TextMeshProUGUI nuovoPunteggioPausa;
     //public TextMeshProUGUI recordPausa;
 
-    private float touchSpeed = 5;
+    //private float touchSpeed = 5;
     private Rigidbody rb;
     private float horizontalMove = 0f, verticalMove = 0f;
+    private float maxSpeed = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -45,19 +47,20 @@ public class PlayerMovement : MonoBehaviour
             verticalMove = speed * joy.Vertical;
         else
             verticalMove = 0;
+
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(new Vector3(rb.position.x + horizontalMove * speed * Time.fixedDeltaTime, 0, rb.position.z + verticalMove * speed * Time.fixedDeltaTime));
+        Vector3 v = new Vector3(rb.position.x + horizontalMove * speed * Time.fixedDeltaTime, 0, rb.position.z + verticalMove * speed * Time.fixedDeltaTime);
+        rb.MovePosition(v);
+        if(Input.touchCount>0)
+            ship.gameObject.transform.rotation = Quaternion.LookRotation(new Vector3(horizontalMove, 0, verticalMove));
     }
 
     public void Pause()
     {
-        //pause.SetActive(true);
-        //hud.SetActive(false);
-        //Cursor.lockState = CursorLockMode.Confined;
-        //Time.timeScale = 0;
+        Time.timeScale = 0;
         //gameIsPaused = true;
 
         //recordPausa.text = "Record: " + PlayerPrefs.GetInt("score", 0);
@@ -66,10 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Resume()
     {
-        //pause.SetActive(false);
-        //hud.SetActive(true);
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Time.timeScale = 1;
+        Time.timeScale = 1;
         //gameIsPaused = false;
     }
 
@@ -98,4 +98,8 @@ public class PlayerMovement : MonoBehaviour
         Application.Quit();
     }
 
+    public void LateralFire()
+    {
+        Debug.Log("Fire!");
+    }
 }
