@@ -1,5 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5009322225361414179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637554045530000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 995328
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,17 +34,40 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 4188936318020448236}
-  - {fileID: 555216660535930049}
+  - {fileID: 5048524379261712476}
+  - {fileID: -5009322225361414179}
   EditorEvents:
-  - {fileID: 6023518765468231610}
+  - {fileID: 29390666769913709}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 555216660535930049}
+  - {fileID: -5009322225361414179}
   StringsBanks:
-  - {fileID: 4188936318020448236}
-  stringsBankWriteTime: 637554045536157962
+  - {fileID: 5048524379261712476}
+  stringsBankWriteTime: 637554045530000000
   cacheVersion: 6
+--- !u!114 &29390666769913709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Sea
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Sea
+  guid: b17dbdf0d08c5c429a6dc66a2345d073
+  Banks:
+  - {fileID: -5009322225361414179}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 61134
 --- !u!114 &555216660535930049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,6 +103,27 @@ MonoBehaviour:
   Name: Master.strings
   StudioPath: bank:/Master.strings
   lastModified: 637554045536157962
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 754
+  Exists: 1
+--- !u!114 &5048524379261712476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637554045530000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop

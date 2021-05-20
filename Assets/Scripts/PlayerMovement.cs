@@ -53,7 +53,8 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 v = new Vector3(rb.position.x + horizontalMove * speed * Time.fixedDeltaTime, 0, rb.position.z + verticalMove * speed * Time.fixedDeltaTime);
-        rb.MovePosition(v);
+        //rb.MovePosition(v);
+        rb.AddForce(new Vector3(horizontalMove,0,verticalMove), ForceMode.Acceleration);
         if(Input.touchCount>0)
             ship.gameObject.transform.rotation = Quaternion.LookRotation(new Vector3(horizontalMove, 0, verticalMove));
     }
