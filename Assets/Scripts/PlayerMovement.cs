@@ -11,8 +11,11 @@ public class PlayerMovement : MonoBehaviour
     public Joystick joy;
     public GameObject ship;
     public float speed = 20f;
+    public GameObject[] cannons;
 
     [Header("Hud")]
+    public Button fireButtonBack;
+    public Button fireButton;
     //public TextMeshProUGUI punteggio;
 
     [Header("GameOver")]
@@ -61,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Pause()
     {
-        Time.timeScale = 0;
+        Time.timeScale = -2f;
         //gameIsPaused = true;
 
         //recordPausa.text = "Record: " + PlayerPrefs.GetInt("score", 0);
@@ -101,6 +104,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void LateralFire()
     {
-        Debug.Log("Fire!");
+            fireButton.GetComponent<Animator>().SetTrigger("canCooldown");
+            Color tmp = fireButtonBack.GetComponent<Image>().color;
+            tmp.a = 0.3f;
+            fireButtonBack.GetComponent<Image>().color = tmp;
+            foreach (GameObject c in cannons)
+            {
+                c.GetComponent<Fire>().CannonFire();
+            }
     }
 }
