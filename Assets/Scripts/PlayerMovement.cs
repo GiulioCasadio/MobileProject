@@ -55,19 +55,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {        
-        if (Input.touchCount > 0) {
+        if (Input.touchCount > 0 && verticalMove!=0 && horizontalMove!=0) {
             Vector3 v = new Vector3(rb.position.x + horizontalMove * speed * Time.fixedDeltaTime, 0, rb.position.z + verticalMove * speed * Time.fixedDeltaTime);
-            rb.AddForce(new Vector3(horizontalMove, 0, verticalMove), ForceMode.Acceleration);
+            rb.AddForce(new Vector3(horizontalMove, 0, verticalMove), ForceMode.Force);
             ship.gameObject.transform.rotation = Quaternion.LookRotation(new Vector3(horizontalMove, 0, verticalMove) * 0.1f);
         }
-           
-        //else
-        //{
-        //    rb.velocity = Vector3.zero;
-        //    rb.angularVelocity = Vector3.zero;
-        //    rb.Sleep();
-        //    rb.AddForce(new Vector3(horizontalMove, 0, verticalMove), ForceMode.Force);
-        //}
     }
 
     public void Pause()
