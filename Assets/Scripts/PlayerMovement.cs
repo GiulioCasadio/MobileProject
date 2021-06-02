@@ -43,23 +43,24 @@ public class PlayerMovement : MonoBehaviour
     {
         if (joy.Horizontal >= .2f || joy.Horizontal <= .2f)
             horizontalMove = speed * joy.Horizontal;
-        //else
-        //    horizontalMove = 0;
+        else
+            horizontalMove = 0;
 
         if (joy.Vertical >= .2f || joy.Vertical <= .2f)
             verticalMove = speed * joy.Vertical;
-        //else
-        //    verticalMove = 0;
+        else
+            verticalMove = 0;
 
     }
 
     private void FixedUpdate()
-    {
-        Vector3 v = new Vector3(rb.position.x + horizontalMove * speed * Time.fixedDeltaTime, 0, rb.position.z + verticalMove * speed * Time.fixedDeltaTime);
-        rb.MovePosition(v);
-        //rb.AddForce(new Vector3(horizontalMove, 0, verticalMove), ForceMode.Force);
-        if (Input.touchCount>0)
-            ship.gameObject.transform.rotation = Quaternion.LookRotation(new Vector3(horizontalMove, 0, verticalMove)*0.1f);
+    {        
+        if (Input.touchCount > 0) {
+            Vector3 v = new Vector3(rb.position.x + horizontalMove * speed * Time.fixedDeltaTime, 0, rb.position.z + verticalMove * speed * Time.fixedDeltaTime);
+            rb.AddForce(new Vector3(horizontalMove, 0, verticalMove), ForceMode.Acceleration);
+            ship.gameObject.transform.rotation = Quaternion.LookRotation(new Vector3(horizontalMove, 0, verticalMove) * 0.1f);
+        }
+           
         //else
         //{
         //    rb.velocity = Vector3.zero;
