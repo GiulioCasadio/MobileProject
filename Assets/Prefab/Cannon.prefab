@@ -6388,6 +6388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzle: {fileID: 2179907362945804248}
+  proiettile: {fileID: 4988525125264359840, guid: 6e5330d4410420f469fce292615c0888, type: 3}
+  fireSpeed: 5000
 --- !u!1 &8584206503554149370
 GameObject:
   m_ObjectHideFlags: 0

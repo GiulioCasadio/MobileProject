@@ -104,13 +104,19 @@ public class PlayerMovement : MonoBehaviour
 
     public void LateralFire()
     {
-            fireButton.GetComponent<Animator>().SetTrigger("canCooldown");
-            Color tmp = fireButtonBack.GetComponent<Image>().color;
-            tmp.a = 0.3f;
-            fireButtonBack.GetComponent<Image>().color = tmp;
-            foreach (GameObject c in cannons)
-            {
-                c.GetComponent<Fire>().CannonFire();
-            }
+        fireButton.GetComponent<Animator>().SetTrigger("canCooldown");
+        Color tmp = fireButtonBack.GetComponent<Image>().color;
+        tmp.a = 0.3f;
+        fireButtonBack.GetComponent<Image>().color = tmp;
+        foreach (GameObject c in cannons)
+        {
+            c.GetComponent<Fire>().CannonFire();
+        }
+    }
+
+    public void Affonda()
+    {
+        print("Hai perso!");
+        Destroy(this.gameObject);
     }
 }

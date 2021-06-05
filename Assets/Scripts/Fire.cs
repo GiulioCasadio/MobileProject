@@ -5,18 +5,22 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     public ParticleSystem muzzle;
+    public GameObject proiettile;
+    public float fireSpeed;
 
     public void CannonFire()
     {
         muzzle.Play();
-
-        RaycastHit hit;
-        if (Physics.Raycast(this.transform.position, this.transform.right, out hit))
-        {
-            if (hit.transform.name.Equals("EnemyShip"))
-            {
-                Debug.Log("Plof!");
-            }
-        }
+        GameObject p;
+        p=Instantiate(proiettile, this.transform.position, Quaternion.identity);
+        p.transform.GetComponent<Rigidbody>().AddForce((this.transform.right * -1) * fireSpeed * Time.deltaTime, ForceMode.Force);
+        //RaycastHit hit;
+        //if (Physics.Raycast(this.transform.position, this.transform.right*-1, out hit))
+        //{
+        //    if (hit.transform.name.Equals("EnemyShip") && hit.distance<=35)
+        //    {
+        //        Debug.Log("Colpito!");
+        //    }
+        //}
     }
 }
