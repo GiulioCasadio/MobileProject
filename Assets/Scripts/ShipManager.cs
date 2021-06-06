@@ -5,6 +5,12 @@ using UnityEngine;
 public class ShipManager : MonoBehaviour
 {
     public int shipLife;
+    public HealthBar healthBar;
+
+    private void Start()
+    {
+        healthBar.SetHealth(shipLife);    
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,6 +18,7 @@ public class ShipManager : MonoBehaviour
         {
             Destroy(other.gameObject);
             shipLife--;
+            healthBar.SetHealth(shipLife);
             if (shipLife == 0)
             {
                 this.GetComponent<Animator>().SetTrigger("affonda");

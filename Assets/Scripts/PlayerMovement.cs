@@ -57,9 +57,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.touchCount > 0 && verticalMove!=0 && horizontalMove!=0) {
             Vector3 rotDest = new Vector3(horizontalMove, 0, verticalMove);
 
-            //Vector3 v = new Vector3(rb.position.x + horizontalMove * speed * Time.fixedDeltaTime, 0, rb.position.z + verticalMove * speed * Time.fixedDeltaTime);
             rb.AddForce(rotDest, ForceMode.Force);
-            //ship.gameObject.transform.rotation = Quaternion.LookRotation(new Vector3(horizontalMove, 0, verticalMove));
             ship.gameObject.transform.rotation = Quaternion.RotateTowards(ship.gameObject.transform.rotation, Quaternion.LookRotation(rotDest), Time.fixedDeltaTime * 25f);
 
         }
