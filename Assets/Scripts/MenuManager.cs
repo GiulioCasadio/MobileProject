@@ -28,4 +28,14 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void GoToSettings()
+    {
+        GetComponent<Animator>().SetBool("menuToSet", true);
+    }
+
+    public void GoToMenu()
+    {
+        GetComponent<Animator>().SetBool("setToMenu", true);
+    }
 }
