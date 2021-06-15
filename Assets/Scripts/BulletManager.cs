@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BulletManager : MonoBehaviour
 {
-
     private Vector3 startPos;
 
     // Start is called before the first frame update
