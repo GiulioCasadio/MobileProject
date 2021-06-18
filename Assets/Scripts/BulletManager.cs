@@ -17,7 +17,6 @@ public class BulletManager : MonoBehaviour
     {
         if (Vector3.Distance(startPos, this.transform.position)>=35)
         {
-            Debug.Log("Colpo fallito");
             Destroy(this.gameObject);
         }
     }

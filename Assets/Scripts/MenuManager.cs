@@ -14,9 +14,10 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Time.timeScale = 1; // Mi assicuro di aver ripreso la corretta esecuazione 
         //bestScore = PlayerPrefs.GetInt("score", 0);
         //best.text = "Record: " + bestScore;
-        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void PlayLevel()

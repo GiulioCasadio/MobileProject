@@ -1149,7 +1149,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!95 &3605969921441395591
 Animator:
@@ -1559,7 +1559,7 @@ GameObject:
   - component: {fileID: 2277793790672023083}
   - component: {fileID: 2349782751220337062}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: ScafoPersonaggio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
