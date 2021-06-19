@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
@@ -62,21 +61,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Pause()
-    {
-        Time.timeScale = 0;
-        //gameIsPaused = true;
-
-        //recordPausa.text = "Record: " + PlayerPrefs.GetInt("score", 0);
-        //nuovoPunteggioPausa.text = "Punteggio: " + punteggioCounter;
-    }
-
-    public void Resume()
-    {
-        Time.timeScale = 1;
-        //gameIsPaused = false;
-    }
-
     public void GameOver()
     {
         //gameOver.SetActive(true);
@@ -87,20 +71,6 @@ public class PlayerMovement : MonoBehaviour
         //nuovoPunteggio.text = "Punteggio: " + punteggioCounter;
     }
 
-    public void StartScene()
-    {
-        SceneManager.LoadScene("Scenes/FirstMenu");
-    }
-
-    //public void RetartScene()
-    //{
-    //    SceneManager.LoadScene("Scenes/MainScene");
-    //}
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
 
     public void LateralFire()
     {
