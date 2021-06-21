@@ -19,12 +19,10 @@ public class PlayerMovement : MonoBehaviour
     public Button fireButton;
     public HealthBar healthBar;
     public GameObject canvas;
-    //public TextMeshProUGUI punteggio;
 
-    //private float touchSpeed = 5;
     private Rigidbody rb;
     private float horizontalMove = 0f, verticalMove = 0f;
-
+    private bool chiave;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         newShip.transform.GetComponent<ShipManager>().healthBar = healthBar;
         if (PlayerPrefs.GetInt("ship") == 1)
             speed += 1;
-
+        chiave = false;
     }
 
     // Update is called once per frame
@@ -82,5 +80,22 @@ public class PlayerMovement : MonoBehaviour
     {
         print("Hai perso!");
         Destroy(this.gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.name)
+        {
+            case "Forziere":
+                if (chiave)
+                {
+                    canvas.GetComponent<MenuManager>().GameWin();
+                }
+                break;
+            case "Key":
+                chiave = true;
+                Destroy(other.gameObject);
+                break;
+        }
     }
 }

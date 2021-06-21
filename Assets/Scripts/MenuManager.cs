@@ -14,6 +14,7 @@ public class MenuManager : MonoBehaviour
     public Image[] stats;
 
     [Header("UI")]
+    public GameObject gameWinObject;
     public GameObject gameOverObject;
     public GameObject hud;
     public GameObject shipSelection;
@@ -157,5 +158,13 @@ public class MenuManager : MonoBehaviour
         GetComponent<Animator>().SetTrigger("isOver");
     }
 
-
+    public void GameWin()
+    {
+        shipSelection.SetActive(true);
+        hud.SetActive(false);
+        gameWinObject.SetActive(true);
+        SetStats(PlayerPrefs.GetInt("ship"));
+        ships[PlayerPrefs.GetInt("ship")].SetActive(true);
+        GetComponent<Animator>().SetTrigger("winning");
+    }
 }

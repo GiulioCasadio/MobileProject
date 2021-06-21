@@ -47,6 +47,11 @@ public class ShipManager : MonoBehaviour
             healthBar.SetHealth(shipLife);
             if (shipLife == 0)
             {
+                if (!gameObject.name.StartsWith("Player"))
+                {
+                    int life=++GameObject.Find("Player").GetComponentInChildren<ShipManager>().shipLife;
+                    GameObject.Find("Player").GetComponentInChildren<ShipManager>().healthBar.SetHealth(life);
+                }
                 anim.Play("Affondamento");
             }
         }
