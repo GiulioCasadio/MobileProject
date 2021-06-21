@@ -40,7 +40,10 @@ public class EnemyController : MonoBehaviour
                 {
                     ray = new Ray(c.transform.position, -c.transform.right);
 
-                    if (Physics.Raycast(ray, out hit, 30) && hit.collider.name == "ScafoPersonaggio" && recharge <= 0)
+                    if (Physics.Raycast(ray, out hit, 30) && 
+                        hit.collider.name == "ScafoPersonaggio" && 
+                        recharge <= 0 && 
+                        gameObject.GetComponentInChildren<ShipManager>().shipLife>0)
                     {
                         c.transform.GetComponent<Fire>().CannonFire();
                         recharge = timeToFire;

@@ -43,9 +43,13 @@ public class ShipManager : MonoBehaviour
             e = Instantiate(explosion, other.transform.position, Quaternion.identity);
             e.GetComponent<ParticleSystem>().Play();
             Destroy(other.gameObject);
+            if (!gameObject.name.StartsWith("Player"))
+            {
+                shipLife -= PlayerPrefs.GetInt("combo");
+            }
             shipLife--;
             healthBar.SetHealth(shipLife);
-            if (shipLife == 0)
+            if (shipLife <= 0)
             {
                 if (!gameObject.name.StartsWith("Player"))
                 {

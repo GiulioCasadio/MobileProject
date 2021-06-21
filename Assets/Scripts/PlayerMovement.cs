@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         if (PlayerPrefs.GetInt("ship") == 1)
             speed += 1;
         chiave = false;
+        PlayerPrefs.SetInt("combo", 0);
     }
 
     // Update is called once per frame
@@ -94,6 +95,22 @@ public class PlayerMovement : MonoBehaviour
                 break;
             case "Key":
                 chiave = true;
+                Destroy(other.gameObject);
+                break;
+            case "Heart":
+                float lifeMax = GameObject.Find("Player").GetComponentInChildren<ShipManager>().healthBar.GetMaxHealth();
+                GameObject.Find("Player").GetComponentInChildren<ShipManager>().healthBar.SetMaxHealth((int)++lifeMax);
+                int life = ++GameObject.Find("Player").GetComponentInChildren<ShipManager>().shipLife;
+                GameObject.Find("Player").GetComponentInChildren<ShipManager>().healthBar.SetHealth(life);
+                Destroy(other.gameObject);
+                break;
+            case "Skull":
+                int combo = PlayerPrefs.GetInt("combo")+1;
+                PlayerPrefs.SetInt("combo",combo);
+                Destroy(other.gameObject);
+                break;
+            case "Timone":
+                speed++;
                 Destroy(other.gameObject);
                 break;
         }
