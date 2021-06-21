@@ -13,15 +13,16 @@ public class MenuManager : MonoBehaviour
     public TextMeshProUGUI mapName, shipName;
     public Image[] stats;
 
-    //private int bestScore;
+    [Header("UI")]
+    public GameObject gameOverObject;
+    public GameObject hud;
+    public GameObject shipSelection;
 
     // Start is called before the first frame update
     void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Time.timeScale = 1; // Mi assicuro di aver ripreso la corretta esecuazione 
-        //bestScore = PlayerPrefs.GetInt("score", 0);
-        //best.text = "Record: " + bestScore;
     }
 
     public void PlayLevel()
@@ -128,25 +129,33 @@ public class MenuManager : MonoBehaviour
     }
     public void Pause()
     {
+        shipSelection.SetActive(true);
         Time.timeScale = 0;
         SetStats(PlayerPrefs.GetInt("ship"));
         ships[PlayerPrefs.GetInt("ship")].SetActive(true);
-        //gameIsPaused = true;
-
-        //recordPausa.text = "Record: " + PlayerPrefs.GetInt("score", 0);
-        //nuovoPunteggioPausa.text = "Punteggio: " + punteggioCounter;
     }
 
     public void Resume()
     {
         Time.timeScale = 1;
-        //gameIsPaused = false;
     }
 
     public void Restart()
     {
         Scene scene = SceneManager.GetActiveScene();
+        Debug.Log(scene.name);
         SceneManager.LoadScene(scene.name);
     }
+
+    public void GameOver()
+    {
+        shipSelection.SetActive(true);
+        hud.SetActive(false);
+        gameOverObject.SetActive(true);
+        SetStats(PlayerPrefs.GetInt("ship"));
+        ships[PlayerPrefs.GetInt("ship")].SetActive(true);
+        GetComponent<Animator>().SetTrigger("isOver");
+    }
+
 
 }

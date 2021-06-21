@@ -14,10 +14,14 @@ public class ShipManager : MonoBehaviour
     public ParticleSystem[] fire;
     private bool isOnFire=false;
 
+    private Animator anim;
+
     private void Start()
     {
+        healthBar.SetMaxHealth(shipLife);
         healthBar.SetHealth(shipLife);
         maxHealth = shipLife;
+        anim=GetComponent<Animator>();
     }
 
     private void Update()
@@ -43,7 +47,7 @@ public class ShipManager : MonoBehaviour
             healthBar.SetHealth(shipLife);
             if (shipLife == 0)
             {
-                this.GetComponent<Animator>().SetTrigger("affonda");
+                anim.Play("Affondamento");
             }
         }
     }

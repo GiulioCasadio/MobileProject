@@ -30,21 +30,19 @@ Transform:
   m_Father: {fileID: 6983010028893237885}
   m_RootOrder: 69
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4986379306920327169
-MonoBehaviour:
+--- !u!65 &-1257464100689244856
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7756168547463309511}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96a31a3ba28769d4f84e93c192cc44fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cannons:
-  - {fileID: 1165843061626619759}
-  - {fileID: 6293396060812930728}
+  serializedVersion: 2
+  m_Size: {x: 10.534949, y: 5.382912, z: 1.585752}
+  m_Center: {x: 0.098018646, y: 2.191456, z: -0.12998635}
 --- !u!95 &5889868212205271680
 Animator:
   serializedVersion: 3
@@ -64,6 +62,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3019139981430976991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7756168547463309511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151a86467581510469638f4067e7719b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipLife: 10
+  healthBar: {fileID: 0}
+  explosion: {fileID: 130848, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
+  fire: []
+--- !u!114 &4986379306920327169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7756168547463309511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a31a3ba28769d4f84e93c192cc44fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cannons:
+  - {fileID: 1165843061626619759}
+  - {fileID: 6293396060812930728}
 --- !u!64 &4668064688072161339
 MeshCollider:
   m_ObjectHideFlags: 0

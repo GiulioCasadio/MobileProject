@@ -1,22 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4768064243441390744
-MonoBehaviour:
+--- !u!64 &1323275832417151977
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6413953883610188399}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 3509a0667ca8f1949a2747a59baea4ee, type: 3}
+--- !u!65 &5225112259831805867
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6795926679309878618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96a31a3ba28769d4f84e93c192cc44fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cannons:
-  - {fileID: 2625035721623347426}
-  - {fileID: 6992123300945086424}
-  - {fileID: 1594885154282142843}
-  - {fileID: 7817463490853781080}
+  serializedVersion: 2
+  m_Size: {x: 11.28616, y: 6.1287932, z: 1.0634055}
+  m_Center: {x: -0.63675404, y: 2.5643966, z: -0.3237859}
 --- !u!95 &3058570911569292146
 Animator:
   serializedVersion: 3
@@ -36,20 +46,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!64 &1323275832417151977
-MeshCollider:
+--- !u!114 &-8796131819882415568
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6413953883610188399}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 6795926679309878618}
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 3509a0667ca8f1949a2747a59baea4ee, type: 3}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151a86467581510469638f4067e7719b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipLife: 10
+  healthBar: {fileID: 0}
+  explosion: {fileID: 130848, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
+  fire: []
+--- !u!114 &-4768064243441390744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6795926679309878618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a31a3ba28769d4f84e93c192cc44fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cannons:
+  - {fileID: 2625035721623347426}
+  - {fileID: 6992123300945086424}
+  - {fileID: 1594885154282142843}
+  - {fileID: 7817463490853781080}
 --- !u!1 &7087799868990674797
 GameObject:
   m_ObjectHideFlags: 0
