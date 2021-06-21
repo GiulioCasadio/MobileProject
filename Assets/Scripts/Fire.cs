@@ -13,6 +13,6 @@ public class Fire : MonoBehaviour
         muzzle.Play();
         GameObject p;
         p=Instantiate(proiettile, this.transform.position, Quaternion.identity);
-        p.transform.GetComponent<Rigidbody>().AddForce((this.transform.right * -1) * fireSpeed * Time.deltaTime, ForceMode.Force);
+        p.transform.GetComponent<Rigidbody>().AddForce((this.transform.right * -1) * fireSpeed * Time.deltaTime, ForceMode.VelocityChange);
     }
 }

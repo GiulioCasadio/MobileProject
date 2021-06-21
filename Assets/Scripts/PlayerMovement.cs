@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Game")]
     public Joystick joy;
-    public GameObject ship;
     public float speed = 20f;
+    public float rotationSpeed;
+    public GameObject ship;
     public GameObject[] cannons;
+    public GameObject[] differentShips;
 
     [Header("Hud")]
     public Button fireButtonBack;
@@ -33,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        ship = Instantiate(differentShips[PlayerPrefs.GetInt("ship")]);
+        ship.gameObject.transform.parent = transform;
+        ship.gameObject.transform.localPosition = new Vector3(0, 0, 0);
+
     }
 
     // Update is called once per frame
@@ -47,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
             verticalMove = speed * joy.Vertical;
         else
             verticalMove = 0;
-
     }
 
     private void FixedUpdate()
@@ -56,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 rotDest = new Vector3(horizontalMove, 0, verticalMove);
 
             rb.AddForce(rotDest, ForceMode.Force);
-            ship.gameObject.transform.rotation = Quaternion.RotateTowards(ship.gameObject.transform.rotation, Quaternion.LookRotation(rotDest), Time.fixedDeltaTime * 25f);
+            ship.gameObject.transform.rotation = Quaternion.RotateTowards(ship.gameObject.transform.rotation, Quaternion.LookRotation(rotDest), Time.deltaTime * rotationSpeed);
 
         }
     }

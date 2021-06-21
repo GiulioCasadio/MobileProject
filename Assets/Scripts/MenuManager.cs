@@ -8,9 +8,10 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     [Header("GameSelection")]
-    private int currenntShip=0, currentMap=0;
+    private int currentShip=0, currentMap=0;
     public GameObject[] ships, maps;
     public TextMeshProUGUI mapName, shipName;
+    public Image[] stats;
 
     //private int bestScore;
 
@@ -25,6 +26,7 @@ public class MenuManager : MonoBehaviour
 
     public void PlayLevel()
     {
+        PlayerPrefs.SetInt("ship", currentShip);
         SceneManager.LoadScene("Scenes/Level1");
     }
 
@@ -50,28 +52,31 @@ public class MenuManager : MonoBehaviour
 
     public void NextShip()
     {
-        currenntShip = currenntShip >= 2 ? 0 : ++currenntShip;
+        currentShip = currentShip >= 2 ? 0 : ++currentShip;
         for(int i=0; i<3; i++)
         {
-            if (i == currenntShip)
+            if (i == currentShip)
                 ships[i].SetActive(true);
             else
                 ships[i].SetActive(false);
         }
-        shipName.text = "Ship " + (currenntShip+1);
+        shipName.text = "Ship " + (currentShip+1);
+        SetStats(currentShip);
     }
+
 
     public void PrevShip()
     {
-        currenntShip = currenntShip <= 0 ? 2 : --currenntShip;
+        currentShip = currentShip <= 0 ? 2 : --currentShip;
         for (int i = 0; i < 3; i++)
         {
-            if (i == currenntShip)
+            if (i == currentShip)
                 ships[i].SetActive(true);
             else
                 ships[i].SetActive(false);
         }
-        shipName.text= "Ship " + (currenntShip + 1);
+        shipName.text= "Ship " + (currentShip + 1);
+        SetStats(currentShip);
     }
 
     public void NextMap()
@@ -100,9 +105,32 @@ public class MenuManager : MonoBehaviour
         mapName.text = "Level " + (currentMap + 1);
     }
 
+    public void SetStats(int i)
+    {
+        switch (i)
+        {
+            case 0:
+                stats[0].fillAmount = 0.3f;
+                stats[1].fillAmount = 0.6f;
+                stats[2].fillAmount = 0.3f;
+                break;
+            case 1:
+                stats[0].fillAmount = 0.3f;
+                stats[1].fillAmount = 0.3f;
+                stats[2].fillAmount = 0.6f;
+                break;
+            default:
+                stats[0].fillAmount = 0.6f;
+                stats[1].fillAmount = 0.3f;
+                stats[2].fillAmount = 0.3f;
+                break;
+        }
+    }
     public void Pause()
     {
         Time.timeScale = 0;
+        SetStats(PlayerPrefs.GetInt("ship"));
+        ships[PlayerPrefs.GetInt("ship")].SetActive(true);
         //gameIsPaused = true;
 
         //recordPausa.text = "Record: " + PlayerPrefs.GetInt("score", 0);
