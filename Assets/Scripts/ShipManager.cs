@@ -59,8 +59,11 @@ public class ShipManager : MonoBehaviour
                 {
                     int life=++GameObject.Find("Player").GetComponentInChildren<ShipManager>().shipLife;
                     GameObject.Find("Player").GetComponentInChildren<ShipManager>().healthBar.SetHealth(life);
-                    if(!hasGenereated)
+                    if (!hasGenereated)
+                    {
+                        GameObject.Find("CanvasUI").GetComponent<MenuManager>().AddKill();
                         RandomBonusGen();
+                    }
                 }
                 anim.Play("Affondamento");
             }

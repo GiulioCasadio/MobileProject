@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 988423298261804274}
   - component: {fileID: 988423298261804275}
   m_Layer: 0
-  m_Name: Timone
+  m_Name: timone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

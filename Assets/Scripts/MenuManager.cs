@@ -7,12 +7,16 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+
     [Header("GameSelection")]
     private int currentShip = 0, currentMap = 0;
-    public GameObject[] ships, maps;
-    public TextMeshProUGUI mapName, shipName;
+    public GameObject[] ships;
+    public GameObject[] maps;
+    public TextMeshProUGUI mapName;
+    public TextMeshProUGUI shipName;
     public Image[] stats;
     public Image[] bonus;
+    public int enemiesCount;
 
     [Header("UI")]
     public GameObject gameWinObject;
@@ -20,25 +24,57 @@ public class MenuManager : MonoBehaviour
     public GameObject hud;
     public GameObject shipSelection;
     public GameObject comboTxt;
+    public TextMeshProUGUI killsTxt;
+    public TextMeshProUGUI timerTxt;
+    public Image[] stars;
+    public TextMeshProUGUI orologio;
 
-    private float dmgBonus = 0, spdBonus = 0, hltBonus = 0;
+    private float dmgBonus = 0, spdBonus = 0, hltBonus = 0, seconds = 0;
+    private int kills = 0, starsEarned = 0, minutes;
+    private bool isPaused = false;
 
     // Start is called before the first frame update
     void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        Time.timeScale = 1; // Mi assicuro di aver ripreso la corretta esecuazione 
+        SetMap(0);
+
+        // RESETTA
+        PlayerPrefs.SetInt("b0", 0);
+        PlayerPrefs.SetInt("b1", 0);
+        PlayerPrefs.SetInt("b2", 0);
+    }
+
+    private void Update()
+    {
+        if (orologio != null && !isPaused)
+        {
+            seconds += Time.deltaTime;
+            orologio.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+            if (seconds >= 60)
+            {
+                minutes++;
+                seconds = 0;
+            }
+        }
     }
 
     public void PlayLevel()
     {
         PlayerPrefs.SetInt("ship", currentShip);
-        SceneManager.LoadScene("Scenes/Level1");
+        GetComponent<Animator>().SetTrigger("Load");
+        StartCoroutine(LoadCoroutine());
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Scenes/FirstMenu");
+        SceneManager.LoadSceneAsync("Scenes/FirstMenu");
+    }
+
+    public void LoadToMenu()
+    {
+        GetComponent<Animator>().SetTrigger("toMenuLoad");
+        StartCoroutine(LoadMenuCoroutine());
     }
 
     public void QuitGame()
@@ -96,6 +132,7 @@ public class MenuManager : MonoBehaviour
                 maps[i].SetActive(false);
         }
         mapName.text = "Level " + (currentMap + 1);
+        SetMap(currentMap);
     }
 
     public void PrevMap()
@@ -109,8 +146,35 @@ public class MenuManager : MonoBehaviour
                 maps[i].SetActive(false);
         }
         mapName.text = "Level " + (currentMap + 1);
+        SetMap(currentMap);
     }
 
+    public void SetMap(int i)
+    {
+        switch (PlayerPrefs.GetInt("b" + i.ToString()))
+        {
+            case 1:
+                stars[0].gameObject.SetActive(true);
+                stars[1].gameObject.SetActive(false);
+                stars[2].gameObject.SetActive(false);
+                break;
+            case 2:
+                stars[0].gameObject.SetActive(true);
+                stars[1].gameObject.SetActive(true);
+                stars[2].gameObject.SetActive(false);
+                break;
+            case 3:
+                stars[0].gameObject.SetActive(true);
+                stars[1].gameObject.SetActive(true);
+                stars[2].gameObject.SetActive(true);
+                break;
+            default:
+                stars[0].gameObject.SetActive(false);
+                stars[1].gameObject.SetActive(false);
+                stars[2].gameObject.SetActive(false);
+                break;
+        }
+    }
     public void SetStats(int i)
     {
         switch (i)
@@ -157,6 +221,7 @@ public class MenuManager : MonoBehaviour
 
     public void Pause()
     {
+        isPaused = true;
         GetComponent<Animator>().SetTrigger("inPause");
         SetStats(PlayerPrefs.GetInt("ship"));
         ships[PlayerPrefs.GetInt("ship")].SetActive(true);
@@ -164,8 +229,8 @@ public class MenuManager : MonoBehaviour
 
     public void Resume()
     {
+        isPaused = false;
         GetComponent<Animator>().SetTrigger("inGame");
-        Time.timeScale = 1;
     }
 
     public void Restart()
@@ -177,7 +242,9 @@ public class MenuManager : MonoBehaviour
 
     public void GameOver()
     {
+        isPaused = true;
         hud.SetActive(false);
+        shipSelection.SetActive(true);
         gameOverObject.SetActive(true);
         SetStats(PlayerPrefs.GetInt("ship"));
         ships[PlayerPrefs.GetInt("ship")].SetActive(true);
@@ -186,20 +253,65 @@ public class MenuManager : MonoBehaviour
 
     public void GameWin()
     {
+        isPaused = true;
+        killsTxt.text = "Kills: " + kills + "/" + enemiesCount;
+        timerTxt.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+
+        if (kills == enemiesCount)
+        {
+            killsTxt.color = new Color(22f / 255f, 161f / 255f, 0f / 255f);
+            starsEarned++;
+        }
+
+        if (minutes < 5)
+        {
+            timerTxt.color = new Color(22f / 255f, 161f / 255f, 0f / 255f);
+            starsEarned++;
+        }
+
         hud.SetActive(false);
+        shipSelection.SetActive(true);
         gameWinObject.SetActive(true);
         SetStats(PlayerPrefs.GetInt("ship"));
         ships[PlayerPrefs.GetInt("ship")].SetActive(true);
         GetComponent<Animator>().SetTrigger("winning");
-    }
 
-    public void FreezeGame()
-    {
-        Time.timeScale = 0;
+        switch (starsEarned)
+        {
+            case 1:
+                stars[0].gameObject.SetActive(true);
+                break;
+            case 2:
+                stars[0].gameObject.SetActive(true);
+                stars[1].gameObject.SetActive(true);
+                break;
+        }
+
+        // salvo il record
+        int ppp = PlayerPrefs.GetInt("b" + currentMap.ToString());
+        if (ppp<starsEarned+1)
+            PlayerPrefs.SetInt("b"+ currentMap, (starsEarned+1));
+
     }
 
     public void SetIni()
     {
         SetStats(PlayerPrefs.GetInt("ship"));
     }
+
+    public void AddKill() { kills++;  }
+
+    IEnumerator LoadCoroutine()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadSceneAsync("Scenes/Level" + (currentMap + 1));
+    }
+
+    IEnumerator LoadMenuCoroutine()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadSceneAsync("Scenes/FirstMenu");
+    }
+
+    public bool GetStatusPause() { return isPaused; }
 }

@@ -90,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
             if (chiave)
             {
                 canvas.GetComponent<MenuManager>().GameWin();
+                Destroy(other.gameObject);
             }
         }
         else if (other.name.StartsWith("Key"))
@@ -97,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
             chiave = true;
             Destroy(other.gameObject);
         }
-        else if (other.name.StartsWith("health"))
+        else if (other.name.StartsWith("heart"))
         {
             canvas.GetComponent<MenuManager>().ImproveBonus(0);
             float lifeMax = GameObject.Find("Player").GetComponentInChildren<ShipManager>().healthBar.GetMaxHealth();
@@ -107,21 +108,21 @@ public class PlayerMovement : MonoBehaviour
                 int life = ++GameObject.Find("Player").GetComponentInChildren<ShipManager>().shipLife;
                 GameObject.Find("Player").GetComponentInChildren<ShipManager>().healthBar.SetHealth(life);
             }
-            Destroy(other.gameObject);
+            Destroy(other.gameObject.transform.parent.gameObject);
         }
-        else if (other.name.StartsWith("dmg"))
+        else if (other.name.StartsWith("skull"))
         {
             canvas.GetComponent<MenuManager>().ImproveBonus(1);
             int combo = PlayerPrefs.GetInt("combo") < 2 ? PlayerPrefs.GetInt("combo") + 1 : PlayerPrefs.GetInt("combo");
             PlayerPrefs.SetInt("combo", combo);
-            Destroy(other.gameObject);
+            Destroy(other.gameObject.transform.parent.gameObject);
         }
-        else if (other.name.StartsWith("speed"))
+        else if (other.name.StartsWith("timone"))
         {
             canvas.GetComponent<MenuManager>().ImproveBonus(2);
             if (speed < 6.5f) 
                 speed+=0.5f;
-            Destroy(other.gameObject);
+            Destroy(other.gameObject.transform.parent.gameObject);
         }
             
     }
