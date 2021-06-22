@@ -85,34 +85,44 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        switch (other.name)
+        if (other.name.StartsWith("Forziere"))
         {
-            case "Forziere":
-                if (chiave)
-                {
-                    canvas.GetComponent<MenuManager>().GameWin();
-                }
-                break;
-            case "Key":
-                chiave = true;
-                Destroy(other.gameObject);
-                break;
-            case "Heart":
-                float lifeMax = GameObject.Find("Player").GetComponentInChildren<ShipManager>().healthBar.GetMaxHealth();
+            if (chiave)
+            {
+                canvas.GetComponent<MenuManager>().GameWin();
+            }
+        }
+        else if (other.name.StartsWith("Key"))
+        {
+            chiave = true;
+            Destroy(other.gameObject);
+        }
+        else if (other.name.StartsWith("health"))
+        {
+            canvas.GetComponent<MenuManager>().ImproveBonus(0);
+            float lifeMax = GameObject.Find("Player").GetComponentInChildren<ShipManager>().healthBar.GetMaxHealth();
+            if (lifeMax < 31)
+            {
                 GameObject.Find("Player").GetComponentInChildren<ShipManager>().healthBar.SetMaxHealth((int)++lifeMax);
                 int life = ++GameObject.Find("Player").GetComponentInChildren<ShipManager>().shipLife;
                 GameObject.Find("Player").GetComponentInChildren<ShipManager>().healthBar.SetHealth(life);
-                Destroy(other.gameObject);
-                break;
-            case "Skull":
-                int combo = PlayerPrefs.GetInt("combo")+1;
-                PlayerPrefs.SetInt("combo",combo);
-                Destroy(other.gameObject);
-                break;
-            case "Timone":
-                speed++;
-                Destroy(other.gameObject);
-                break;
+            }
+            Destroy(other.gameObject);
         }
+        else if (other.name.StartsWith("dmg"))
+        {
+            canvas.GetComponent<MenuManager>().ImproveBonus(1);
+            int combo = PlayerPrefs.GetInt("combo") < 2 ? PlayerPrefs.GetInt("combo") + 1 : PlayerPrefs.GetInt("combo");
+            PlayerPrefs.SetInt("combo", combo);
+            Destroy(other.gameObject);
+        }
+        else if (other.name.StartsWith("speed"))
+        {
+            canvas.GetComponent<MenuManager>().ImproveBonus(2);
+            if (speed < 6.5f) 
+                speed+=0.5f;
+            Destroy(other.gameObject);
+        }
+            
     }
 }

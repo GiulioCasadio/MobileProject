@@ -2878,6 +2878,7 @@ MonoBehaviour:
   cannons:
   - {fileID: 3217439564547352017}
   - {fileID: 2819617958451310872}
+  timeToFire: 5
 --- !u!1 &5449550809949444445
 GameObject:
   m_ObjectHideFlags: 0
@@ -3192,6 +3193,10 @@ MonoBehaviour:
   - {fileID: 7225513371605993536}
   - {fileID: 482079828022608374}
   - {fileID: 1901886192525027498}
+  bonus:
+  - {fileID: 3701247532701502745, guid: 6edb31a4b0b9e994fa5048961a15b061, type: 3}
+  - {fileID: 178713726220809897, guid: 30c6ff022c6fe90498504e486c7955ff, type: 3}
+  - {fileID: 2694201020678314376, guid: 9de50487483b7f44c9025355106874c0, type: 3}
 --- !u!1 &5732207608760511126
 GameObject:
   m_ObjectHideFlags: 0

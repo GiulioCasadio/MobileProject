@@ -62,6 +62,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   explosion: {fileID: 130848, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
   fire: []
+  bonus: []
 --- !u!114 &-4768064243441390744
 MonoBehaviour:
   m_ObjectHideFlags: 0
