@@ -9,7 +9,7 @@ public class MenuManager : MonoBehaviour
 {
 
     [Header("GameSelection")]
-    private int currentShip = 0, currentMap = 0;
+    private int currentShip = 0, currentMap;
     public GameObject[] ships;
     public GameObject[] maps;
     public TextMeshProUGUI mapName;
@@ -17,6 +17,9 @@ public class MenuManager : MonoBehaviour
     public Image[] stats;
     public Image[] bonus;
     public int enemiesCount;
+
+    [FMODUnity.EventRef]
+    public string Event;
 
     [Header("UI")]
     public GameObject gameWinObject;
@@ -32,12 +35,37 @@ public class MenuManager : MonoBehaviour
     private float dmgBonus = 0, spdBonus = 0, hltBonus = 0, seconds = 0;
     private int kills = 0, starsEarned = 0, minutes;
     private bool isPaused = false;
+    private FMOD.Studio.EventInstance endgameEvent;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentMap = PlayerPrefs.GetInt("map");
+        currentShip = PlayerPrefs.GetInt("ship");
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        SetMap(0);
+        SetMap(currentMap);
+        SetStats(currentShip);
+        endgameEvent = FMODUnity.RuntimeManager.CreateInstance(Event);
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (i == currentMap)
+                maps[i].SetActive(true);
+            else
+                maps[i].SetActive(false);
+        }
+        if(mapName!=null)
+            mapName.text = "Level " + (currentMap + 1);
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (i == currentShip)
+                ships[i].SetActive(true);
+            else
+                ships[i].SetActive(false);
+        }
+        if (shipName != null)
+            shipName.text = "Ship " + (currentShip + 1);
 
         // RESETTA
         PlayerPrefs.SetInt("b0", 0);
@@ -62,6 +90,7 @@ public class MenuManager : MonoBehaviour
     public void PlayLevel()
     {
         PlayerPrefs.SetInt("ship", currentShip);
+        PlayerPrefs.SetInt("map", currentMap);
         GetComponent<Animator>().SetTrigger("Load");
         StartCoroutine(LoadCoroutine());
     }
@@ -105,7 +134,6 @@ public class MenuManager : MonoBehaviour
         shipName.text = "Ship " + (currentShip + 1);
         SetStats(currentShip);
     }
-
 
     public void PrevShip()
     {
@@ -238,6 +266,7 @@ public class MenuManager : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         Debug.Log(scene.name);
         SceneManager.LoadScene(scene.name);
+        StopAllPlayerEvents();
     }
 
     public void GameOver()
@@ -249,6 +278,11 @@ public class MenuManager : MonoBehaviour
         SetStats(PlayerPrefs.GetInt("ship"));
         ships[PlayerPrefs.GetInt("ship")].SetActive(true);
         GetComponent<Animator>().SetTrigger("isOver");
+    }
+
+    public void StartEndGameEvent()
+    {
+        endgameEvent.start();
     }
 
     public void GameWin()
@@ -304,14 +338,22 @@ public class MenuManager : MonoBehaviour
     IEnumerator LoadCoroutine()
     {
         yield return new WaitForSeconds(2);
+        StopAllPlayerEvents();
         SceneManager.LoadSceneAsync("Scenes/Level" + (currentMap + 1));
     }
 
     IEnumerator LoadMenuCoroutine()
     {
         yield return new WaitForSeconds(1);
+        StopAllPlayerEvents();
         SceneManager.LoadSceneAsync("Scenes/FirstMenu");
     }
 
     public bool GetStatusPause() { return isPaused; }
+
+    void StopAllPlayerEvents()
+    {
+        FMOD.Studio.Bus playerBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+        playerBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
 }

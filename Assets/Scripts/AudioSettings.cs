@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioSettings : MonoBehaviour
 {
+    public Slider[] sliders;
 
     FMOD.Studio.EventInstance SFXVolumeTestEvent;
 
+    FMOD.Studio.Bus Master;
     FMOD.Studio.Bus Music;
     FMOD.Studio.Bus SFX;
     FMOD.Studio.Bus Ambient;
-    FMOD.Studio.Bus Master;
+    float MasterVolume = 1f;
     float MusicVolume = 0.5f;
     float SFXVolume = 0.5f;
     float AmbientVolume = 0.5f;
-    float MasterVolume = 1f;
 
     void Awake()
     {
@@ -22,6 +24,24 @@ public class AudioSettings : MonoBehaviour
         SFX = FMODUnity.RuntimeManager.GetBus("bus:/Master/Sfx");
         Ambient = FMODUnity.RuntimeManager.GetBus("bus:/Master/Ambient");
         Master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+
+        // Imposto i valori iniziali
+        Music.setVolume(MusicVolume);
+        Ambient.setVolume(AmbientVolume);
+        SFX.setVolume(SFXVolume);
+        Master.setVolume(MasterVolume);
+
+        // recupero le preferenze
+        MasterVolume = PlayerPrefs.GetFloat("Master");
+        MusicVolume = PlayerPrefs.GetFloat("Music");
+        SFXVolume = PlayerPrefs.GetFloat("SFX");
+        AmbientVolume = PlayerPrefs.GetFloat("Ambient");
+
+        // Imposto la dimensione dello slider
+        sliders[0].value = MasterVolume;
+        sliders[1].value = MusicVolume;
+        sliders[2].value = SFXVolume;
+        sliders[3].value = AmbientVolume;
     }
 
     void Update()
@@ -35,20 +55,44 @@ public class AudioSettings : MonoBehaviour
     public void MasterVolumeLevel(float newMasterVolume)
     {
         MasterVolume = newMasterVolume;
+
+        // Salvo la preferenza
+        PlayerPrefs.SetFloat("Master", MasterVolume);
+
+        // Imposto la dimensione dello slider
+        sliders[0].value=MasterVolume;
     }
 
     public void MusicVolumeLevel(float newMusicVolume)
     {
         MusicVolume = newMusicVolume;
+
+        // Salvo la preferenza
+        PlayerPrefs.SetFloat("Music", MusicVolume);
+
+        // Imposto la dimensione dello slider
+        sliders[1].value = MusicVolume;
     }
 
     public void SFXVolumeLevel(float newSFXVolume)
     {
         SFXVolume = newSFXVolume;
+
+        // Salvo la preferenza
+        PlayerPrefs.SetFloat("SFX", SFXVolume);
+
+        // Imposto la dimensione dello slider
+        sliders[2].value = SFXVolume;
     }
 
     public void AmbientVolumeLevel(float newAmbientVolume)
     {
         AmbientVolume = newAmbientVolume;
+
+        // Salvo la preferenza
+        PlayerPrefs.SetFloat("Ambient", AmbientVolume);
+
+        // Imposto la dimensione dello slider
+        sliders[3].value = AmbientVolume;
     }
 }

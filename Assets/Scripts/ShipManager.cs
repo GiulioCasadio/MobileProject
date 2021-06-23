@@ -17,8 +17,13 @@ public class ShipManager : MonoBehaviour
     [Header("Bonus")]
     public GameObject[] bonus;
 
+    [FMODUnity.EventRef]
+    public string EventOnFire;
+
+
     private Animator anim;
     private bool hasGenereated=false;
+    private FMOD.Studio.EventInstance playerFire;
 
     private void Start()
     {
@@ -26,6 +31,7 @@ public class ShipManager : MonoBehaviour
         healthBar.SetHealth(shipLife);
         maxHealth = shipLife;
         anim=GetComponent<Animator>();
+        playerFire = FMODUnity.RuntimeManager.CreateInstance(EventOnFire);
     }
 
     private void Update()
@@ -33,10 +39,20 @@ public class ShipManager : MonoBehaviour
         if (!isOnFire && shipLife<=maxHealth/2)
         {
             isOnFire = true;
-            foreach(ParticleSystem p in fire){
+            playerFire.start();
+            foreach (ParticleSystem p in fire){
                 p.Play();
             }
         }    
+        else if(isOnFire && shipLife > maxHealth / 2)
+        {
+            isOnFire = false;
+            playerFire.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            foreach (ParticleSystem p in fire)
+            {
+                p.Stop();
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -65,6 +81,7 @@ public class ShipManager : MonoBehaviour
                         RandomBonusGen();
                     }
                 }
+                playerFire.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 anim.Play("Affondamento");
             }
         }

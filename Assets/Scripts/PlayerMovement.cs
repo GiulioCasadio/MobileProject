@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void LateralFire()
     {
-        fireButton.GetComponent<Animator>().SetTrigger("canCooldown");
+        canvas.GetComponent<Animator>().SetTrigger("canCooldown");
         Color tmp = fireButtonBack.GetComponent<Image>().color;
         tmp.a = 0.3f;
         fireButtonBack.GetComponent<Image>().color = tmp;
@@ -75,12 +75,6 @@ public class PlayerMovement : MonoBehaviour
         {
             c.GetComponent<Fire>().CannonFire();
         }
-    }
-
-    public void Affonda()
-    {
-        print("Hai perso!");
-        Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -90,6 +90,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 61134
+--- !u!114 &-6888641174913535807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Ambience/OnFire
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Ambience/OnFire
+  guid: bbaa90e861a79d4a9a09144320937c5d
+  Banks:
+  - {fileID: -5009322225361414179}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 335736
 --- !u!114 &-6572397364079223111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +159,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 193875
+--- !u!114 &-5579325083192420297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Soundtracks/AudioFeedMusic
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Soundtracks/AudioFeedMusic
+  guid: df8ebed84ae5f54e976c0b45944a9d44
+  Banks:
+  - {fileID: -5009322225361414179}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 200
 --- !u!114 &-5009322225361414179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,11 +197,11 @@ MonoBehaviour:
   Path: C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637600081257060683
+  lastModified: 637600550805263156
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 9535872
+    Value: 14469280
   Exists: 1
 --- !u!114 &-4676371581215713195
 MonoBehaviour:
@@ -225,6 +271,75 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2613256874827502476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AudioFeedMaster
+  m_EditorClassIdentifier: 
+  Path: event:/AudioFeedMaster
+  guid: 5b0bc44f24896c4ca9765f26f8959562
+  Banks:
+  - {fileID: -5009322225361414179}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 200
+--- !u!114 &-2580244222383182410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Sfx/Select
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Sfx/Select
+  guid: 2035e74e10d73a499f163c76564934b1
+  Banks:
+  - {fileID: -5009322225361414179}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 400
+--- !u!114 &-2251515775066756853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Sfx/AudioFeedSfx
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Sfx/AudioFeedSfx
+  guid: 97bff51583260546b1177114b8280674
+  Banks:
+  - {fileID: -5009322225361414179}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 200
 --- !u!114 &-295203879216095882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +362,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-105085312379498047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Sfx/Collect
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Sfx/Collect
+  guid: 31932dd6f4be8848918ef24bc515bf96
+  Banks:
+  - {fileID: -5009322225361414179}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 750
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,22 +401,24 @@ MonoBehaviour:
   - {fileID: 5048524379261712476}
   - {fileID: -5009322225361414179}
   EditorEvents:
-  - {fileID: 3485563380995701808}
-  - {fileID: -5941842054672192511}
-  - {fileID: -4676371581215713195}
-  - {fileID: 3590363392075290192}
-  - {fileID: -6572397364079223111}
-  - {fileID: 9076280567886093479}
-  - {fileID: -8718865942858841384}
-  - {fileID: 859600807072105016}
-  - {fileID: -4035391359216255270}
-  - {fileID: -7072688363097344302}
+  - {fileID: 5176604483606076983}
+  - {fileID: -2580244222383182410}
+  - {fileID: -105085312379498047}
+  - {fileID: 6026579887361091411}
+  - {fileID: 7566509545788847126}
+  - {fileID: 661266292776827698}
+  - {fileID: -6888641174913535807}
+  - {fileID: 6021342517566569514}
+  - {fileID: -2613256874827502476}
+  - {fileID: -2251515775066756853}
+  - {fileID: -5579325083192420297}
+  - {fileID: 5111145583900644750}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5009322225361414179}
   StringsBanks:
   - {fileID: 5048524379261712476}
-  stringsBankWriteTime: 637600081257090806
+  stringsBankWriteTime: 637600550805282831
   cacheVersion: 6
 --- !u!114 &29390666769913709
 MonoBehaviour:
@@ -343,6 +483,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &661266292776827698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Ambience/Sea
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Ambience/Sea
+  guid: b17dbdf0d08c5c429a6dc66a2345d073
+  Banks:
+  - {fileID: -5009322225361414179}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 61134
 --- !u!114 &859600807072105016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,6 +551,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2152522986027285870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Sfx/AudioFeed
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Sfx/AudioFeed
+  guid: 97bff51583260546b1177114b8280674
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 200
 --- !u!114 &3384634023555433238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,12 +699,103 @@ MonoBehaviour:
   Path: C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637600081257090806
+  lastModified: 637600550805282831
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1344
+    Value: 1488
   Exists: 1
+--- !u!114 &5111145583900644750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Ambience/AudioFeedAmbience
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Ambience/AudioFeedAmbience
+  guid: f846c0697a5dde48872d7904034a3a99
+  Banks:
+  - {fileID: -5009322225361414179}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 200
+--- !u!114 &5176604483606076983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Sfx/Endgame
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Sfx/Endgame
+  guid: 195e90fe5481f14185833f6dc0880d01
+  Banks:
+  - {fileID: -5009322225361414179}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3050
+--- !u!114 &5440872687154588774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Ambience/Explosion
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Ambience/Explosion
+  guid: 6afa5ec54a58a9418f676d77af38dd03
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
+--- !u!114 &6021342517566569514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Soundtracks/Music menu
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Soundtracks/Music menu
+  guid: f24998006bd1614788c00e31d45a9cb5
+  Banks:
+  - {fileID: -5009322225361414179}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 193875
 --- !u!114 &6023518765468231610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,6 +819,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 61134
+--- !u!114 &6026579887361091411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Ambience/ShotFire
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Ambience/ShotFire
+  guid: 50f91c5add8c9e43a42ed42eed52be57
+  Banks:
+  - {fileID: -5009322225361414179}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1380
+--- !u!114 &7566509545788847126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MainSeaSound/Soundtracks/Music
+  m_EditorClassIdentifier: 
+  Path: event:/MainSeaSound/Soundtracks/Music
+  guid: 5da7d15371e4a74c9763b4648c7c4058
+  Banks:
+  - {fileID: -5009322225361414179}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 485000
 --- !u!114 &9076280567886093479
 MonoBehaviour:
   m_ObjectHideFlags: 0
