@@ -55,7 +55,9 @@ public class ShipManager : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    
+
+    private void OnTriggerStay(Collider other)  //OnTriggerEnter
     {
         if (other.name.Equals("Proiettile(Clone)"))
         {

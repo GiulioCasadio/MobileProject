@@ -3186,7 +3186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151a86467581510469638f4067e7719b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipLife: 4
+  shipLife: 7
   healthBar: {fileID: 5797210245354034802}
   explosion: {fileID: 130848, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
   fire:
