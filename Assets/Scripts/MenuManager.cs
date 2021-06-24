@@ -68,9 +68,9 @@ public class MenuManager : MonoBehaviour
             shipName.text = "Ship " + (currentShip + 1);
 
         // RESETTA
-        PlayerPrefs.SetInt("b0", 0);
+        /*PlayerPrefs.SetInt("b0", 0);
         PlayerPrefs.SetInt("b1", 0);
-        PlayerPrefs.SetInt("b2", 0);
+        PlayerPrefs.SetInt("b2", 0);*/
     }
 
     private void Update()
@@ -78,11 +78,15 @@ public class MenuManager : MonoBehaviour
         if (orologio != null && !isPaused)
         {
             seconds += Time.deltaTime;
-            orologio.text = minutes.ToString("00") + ":" + seconds.ToString("00");
             if (seconds >= 60)
             {
                 minutes++;
                 seconds = 0;
+            }
+            orologio.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+            if (minutes >= 7)
+            {
+                orologio.color = new Color(156f / 255f, 0f / 255f, 0f / 255f);
             }
         }
     }
@@ -297,7 +301,7 @@ public class MenuManager : MonoBehaviour
             starsEarned++;
         }
 
-        if (minutes < 5)
+        if (minutes < 7)
         {
             timerTxt.color = new Color(22f / 255f, 161f / 255f, 0f / 255f);
             starsEarned++;
