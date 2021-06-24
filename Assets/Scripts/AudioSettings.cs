@@ -32,6 +32,14 @@ public class AudioSettings : MonoBehaviour
         Master.setVolume(MasterVolume);
 
         // recupero le preferenze
+        if (!PlayerPrefs.HasKey("Master"))
+            PlayerPrefs.SetFloat("Master", 1);
+        if (!PlayerPrefs.HasKey("Music"))
+            PlayerPrefs.SetFloat("Music", 0.5f);
+        if (!PlayerPrefs.HasKey("SFX"))
+            PlayerPrefs.SetFloat("SFX", 0.5f);
+        if (!PlayerPrefs.HasKey("Ambient"))
+            PlayerPrefs.SetFloat("Ambient", 0.5f);
         MasterVolume = PlayerPrefs.GetFloat("Master");
         MusicVolume = PlayerPrefs.GetFloat("Music");
         SFXVolume = PlayerPrefs.GetFloat("SFX");

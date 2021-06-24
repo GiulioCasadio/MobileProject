@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 737795107475948317}
   - component: {fileID: 4436880336301788344}
   - component: {fileID: 1906711910699497586}
-  - component: {fileID: 988423298261804274}
   - component: {fileID: 988423298261804275}
+  - component: {fileID: 3110352413230606342}
   m_Layer: 0
   m_Name: timone
   m_TagString: Untagged
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &988423298261804274
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105548792720284071}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6239881831769578202, guid: be6557caeb21ce74b8f224ee7b2d6d6b, type: 3}
 --- !u!95 &988423298261804275
 Animator:
   serializedVersion: 3
@@ -117,6 +103,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &3110352413230606342
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105548792720284071}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 6.938894e-16, y: 5.4615525e-16, z: -0.000000018626459}
 --- !u!1 &178713726220809897
 GameObject:
   m_ObjectHideFlags: 0

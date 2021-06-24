@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 3358371984542581783}
   - component: {fileID: 1816232764346190770}
   - component: {fileID: 4526251054678359928}
-  - component: {fileID: 2959406995976070112}
   - component: {fileID: 2959406995976070113}
+  - component: {fileID: 3659913232113922770}
   m_Layer: 0
   m_Name: skull
   m_TagString: Untagged
@@ -115,20 +115,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2959406995976070112
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2724824191352741549}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2783131832183395012, guid: ca05f4fb7a9999344a333f0914bea3fd, type: 3}
 --- !u!95 &2959406995976070113
 Animator:
   serializedVersion: 3
@@ -148,6 +134,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &3659913232113922770
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2724824191352741549}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0.00690456, y: -0.0010607876, z: 0.019600004}
 --- !u!1 &2959406996539345907
 GameObject:
   m_ObjectHideFlags: 0

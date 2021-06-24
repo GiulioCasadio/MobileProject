@@ -1972,7 +1972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 80
   distanceToFire: 30
-  rotationSpeed: 8
+  rotationSpeed: 20
   cannons:
   - {fileID: 5638662791929423903}
   - {fileID: 5028095585757363414}

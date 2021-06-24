@@ -32,14 +32,16 @@ public class MenuManager : MonoBehaviour
     public Image[] stars;
     public TextMeshProUGUI orologio;
 
-    private float dmgBonus = 0, spdBonus = 0, hltBonus = 0, seconds = 0;
-    private int kills = 0, starsEarned = 0, minutes;
+    private float dmgBonus, spdBonus, hltBonus, seconds;
+    private int kills, starsEarned, minutes;
     private bool isPaused = false;
     private FMOD.Studio.EventInstance endgameEvent;
 
     // Start is called before the first frame update
     void Start()
     {
+        kills = starsEarned = minutes = 0;
+        dmgBonus = spdBonus = hltBonus = seconds = 0;
         currentMap = PlayerPrefs.GetInt("map");
         currentShip = PlayerPrefs.GetInt("ship");
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
@@ -66,11 +68,15 @@ public class MenuManager : MonoBehaviour
         }
         if (shipName != null)
             shipName.text = "Ship " + (currentShip + 1);
-
-        // RESETTA
-        /*PlayerPrefs.SetInt("b0", 0);
-        PlayerPrefs.SetInt("b1", 0);
-        PlayerPrefs.SetInt("b2", 0);*/
+        
+        #if UNITY_EDITOR
+            // RESETTA
+            PlayerPrefs.SetInt("map", 0);
+            PlayerPrefs.SetInt("ship", 0);
+            PlayerPrefs.SetInt("b0", 0);
+            PlayerPrefs.SetInt("b1", 0);
+            PlayerPrefs.SetInt("b2", 0);
+        #endif
     }
 
     private void Update()
@@ -337,7 +343,9 @@ public class MenuManager : MonoBehaviour
         SetStats(PlayerPrefs.GetInt("ship"));
     }
 
-    public void AddKill() { kills++;  }
+    public void AddKill() { 
+        kills++;  
+    }
 
     IEnumerator LoadCoroutine()
     {

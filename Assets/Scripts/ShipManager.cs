@@ -99,7 +99,7 @@ public class ShipManager : MonoBehaviour
         {
             if (Random.Range(1, 3) == 1)
             {
-                if (Random.Range(1, 3) == 1)
+                if (Random.Range(1, 4) == 1)
                 {
                     Vector3 vec = this.transform.position;
                     GameObject b = Instantiate(bonus[2], vec, Quaternion.identity);
