@@ -74,8 +74,9 @@ public class ShipManager : MonoBehaviour
             {
                 if (!gameObject.name.StartsWith("Player"))
                 {
-                    int life=++GameObject.Find("Player").GetComponentInChildren<ShipManager>().shipLife;
-                    GameObject.Find("Player").GetComponentInChildren<ShipManager>().healthBar.SetHealth(life);
+                    if (GameObject.Find("Player").GetComponentInChildren<ShipManager>().shipLife < GameObject.Find("Player").GetComponentInChildren<ShipManager>().maxHealth) { // se non ho giá il massimo della vita
+                         GameObject.Find("Player").GetComponentInChildren<ShipManager>().shipLife++;
+                    }
                     if (!hasGenereated)
                     {
                         GameObject.Find("CanvasUI").GetComponent<MenuManager>().AddKill();

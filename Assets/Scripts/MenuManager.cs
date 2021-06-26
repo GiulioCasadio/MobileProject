@@ -36,7 +36,6 @@ public class MenuManager : MonoBehaviour
     private int kills, starsEarned, minutes;
     private bool isPaused = false;
     private FMOD.Studio.EventInstance endgameEvent;
-    private GameObject enemies;
     // Start is called before the first frame update
     void Start()
     {
@@ -259,8 +258,6 @@ public class MenuManager : MonoBehaviour
 
     public void Pause()
     {
-        enemies = GameObject.Find("Enemies");
-        enemies.SetActive(false);
         GameObject.Find("Player").GetComponent<Rigidbody>().Sleep();
         isPaused = true;
         GetComponent<Animator>().SetTrigger("inPause");
@@ -270,7 +267,6 @@ public class MenuManager : MonoBehaviour
 
     public void Resume()
     {
-        enemies.SetActive(true);
         isPaused = false;
         GetComponent<Animator>().SetTrigger("inGame");
     }

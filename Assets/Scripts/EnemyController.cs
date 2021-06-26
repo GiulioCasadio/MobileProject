@@ -63,6 +63,8 @@ public class EnemyController : MonoBehaviour
             }
             recharge -= Time.deltaTime;
         }
+        else
+            GetComponent<Rigidbody>().Sleep();
     }
 
     private void OnTriggerEnter(Collider other)
