@@ -1527,7 +1527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muzzle: {fileID: 8821149136670811148}
   proiettile: {fileID: 4988525125264359840, guid: 6e5330d4410420f469fce292615c0888, type: 3}
-  fireSpeed: 5000
+  fireSpeed: 1500
   strevent: event:/MainSeaSound/Ambience/ShotFire
 --- !u!1 &8584206503554149370
 GameObject:

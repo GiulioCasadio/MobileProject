@@ -71,11 +71,11 @@ public class MenuManager : MonoBehaviour
         
         #if UNITY_EDITOR
             // RESETTA
-            PlayerPrefs.SetInt("map", 0);
+            /*PlayerPrefs.SetInt("map", 0);
             PlayerPrefs.SetInt("ship", 0);
             PlayerPrefs.SetInt("b0", 0);
             PlayerPrefs.SetInt("b1", 0);
-            PlayerPrefs.SetInt("b2", 0);
+            PlayerPrefs.SetInt("b2", 0);*/
         #endif
     }
 
