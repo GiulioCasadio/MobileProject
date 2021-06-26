@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000026268ABA8F8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001FAC86A3808 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,62 +16,231 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 14446400
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22880
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000933A95F2A8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB16367D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB16367D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB16367E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB16367F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001FAC8698FF8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Select', format=5, channels=2, frequency=48000, lengthbytes=11424, lengthpcm=48000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.385681.
+[LOG] SoundI::release                          : MainMusic (000001FAC7C1A258)
+[LOG] SoundI::release                          :     MainMusic (000001FA292A6848)
+[LOG] SoundI::release                          :     MainMusic (000001FAC7C183F8)
+[LOG] SoundI::release                          : MainSea (000001FAC7C18758)
+[LOG] SoundI::release                          :     MainSea (000001FA292A18A8)
+[LOG] SoundI::release                          :     MainSea (000001FAC7C1A918)
 [LOG] SystemI::createSound                     : filename = C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000026270040728 : node = 00000262641655D0
-[LOG] SystemI::createSound                     : add node to async list : head = 0000026268558128.  list count = 0
-[LOG] SystemI::createSound                     : filename = C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000026270040728
+[LOG] SystemI::createSound                     : setdata soundi = 000001FA96F67928 : node = 000001FA313441E0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001FAECD51398.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001FA96F67928
 [LOG] SystemI::createSoundInternal             :     Create name='C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSound                     : setdata soundi = 00000262700403C8 : node = 0000026264166250
+[LOG] SystemI::createSound                     :     filename = C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSound                     :     add node to async list : head = 0000026268558128.  list count = 0
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 14446400
+[LOG] SystemI::createSound                     :     setdata soundi = 000001FA96F67778 : node = 000001FA313440A0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 22880
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001FAECD51398.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001FA313442F0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='MENU', format=5, channels=2, frequency=48000, lengthbytes=2630112, lengthpcm=9306021, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001FA96F67928
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001FA96F67778
+[LOG] SystemI::createSoundInternal             :     Create name='C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 14446400
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 22880
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000262641656E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001FA313441B0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 160
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='FireShot', format=5, channels=2, frequency=48000, lengthbytes=115488, lengthpcm=592611, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998993.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000026270040728
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000262700403C8
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='MENU', format=5, channels=2, frequency=48000, lengthbytes=2630112, lengthpcm=9306021, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001FA96F67778
+[LOG] SystemI::createSound                     : filename = C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001FA29533588 : node = 000001FA313445A0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001FAECD51398.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001FA29533588
+[LOG] SystemI::createSound                     : filename = C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 000001FA29533228 : node = 000001FA31344320
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 14446400
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001FAECD51398.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 22880
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001FA313446B0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='MENU', format=5, channels=2, frequency=48000, lengthbytes=2630112, lengthpcm=9306021, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001FA29533588
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001FA29533228
 [LOG] SystemI::createSoundInternal             :     Create name='C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 14446400
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 22880
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000026264166360
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001FA31344430
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 160
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='FireShot', format=5, channels=2, frequency=48000, lengthbytes=115488, lengthpcm=592611, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998993.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000262700403C8
-[LOG] SoundI::release                          : FireShot (00000262700403C8)
-[LOG] SoundI::release                          :     FireShot (000002627539C5D8)
-[LOG] SoundI::release                          :     FireShot (0000026275CD28D8)
-[LOG] SoundI::release                          : FireShot (0000026270040728)
-[LOG] SoundI::release                          :     FireShot (0000026268A92AB8)
-[LOG] SoundI::release                          :     FireShot (000002642DFB1498)
-[LOG] SoundI::release                          : MainMusic (0000026428B68D58)
-[LOG] SoundI::release                          :     MainMusic (0000026268A92918)
-[LOG] SoundI::release                          :     MainMusic (000002642DFB19A8)
-[LOG] SoundI::release                          : MainSea (00000264356BE4F8)
-[LOG] SoundI::release                          :     MainSea (0000026268A92778)
-[LOG] SoundI::release                          :     MainSea (000002642DFB1648)
-[LOG] SoundI::release                          :  (00000264C02FDB98)
-[LOG] SoundI::release                          :     Creack (000002626FFE5468)
-[LOG] SoundI::release                          :  (00000264C02FC1B8)
-[LOG] SoundI::release                          :     SeagullFast (000002626FFE5608)
-[LOG] SoundI::release                          :  (00000264C02F89A8)
-[LOG] SoundI::release                          :     SeagullSlow (00000264377720F8)
-[LOG] SoundI::release                          :  (00000264C02FD8B8)
-[LOG] SoundI::release                          :     SeagullLong (000002626FFE52C8)
-[LOG] SoundI::release                          :  (00000264C02F83E8)
-[LOG] SoundI::release                          :     EndGame (0000026437772298)
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='MENU', format=5, channels=2, frequency=48000, lengthbytes=2630112, lengthpcm=9306021, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001FA29533228
+[LOG] SoundI::release                          : MENU (000001FA96F67778)
+[LOG] SoundI::release                          :     MENU (000001FA2E21BDF8)
+[LOG] SoundI::release                          :     MENU (000001FA3057D0A8)
+[LOG] SoundI::release                          : MENU (000001FA96F67928)
+[LOG] SoundI::release                          :     MENU (000001FA2E21BAB8)
+[LOG] SoundI::release                          :     MENU (000001FA3057D258)
+[LOG] SoundI::release                          : MENU (000001FA29533228)
+[LOG] SoundI::release                          :     MENU (000001FA2E21C7B8)
+[LOG] SoundI::release                          :     MENU (000001FA3057D5B8)
+[LOG] SoundI::release                          : MENU (000001FA29533588)
+[LOG] SoundI::release                          :     MENU (000001FA2E21C138)
+[LOG] SoundI::release                          :     MENU (000001FA3057D408)
+[LOG] SystemI::createSound                     : filename = C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001FABB2D5FC8 : node = 000001FABBD099A0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001FAECD51398.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001FABB2D5FC8
+[LOG] SystemI::createSoundInternal             :     Create name='C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 14446400
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 22880
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001FABBD09AB0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 000001FABB2D2668 : node = 000001FABBD07A60
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001FAECD51398.  list count = 0
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='MainSea', format=5, channels=2, frequency=48000, lengthbytes=812160, lengthpcm=2934464, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.180710.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001FABB2D5FC8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001FABB2D2668
+[LOG] SystemI::createSoundInternal             :     Create name='C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 14446400
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 22880
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001FABBD07B70
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='MainMusic', format=5, channels=2, frequency=48000, lengthbytes=5880992, lengthpcm=23616021, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001FABB2D2668
+[LOG] SoundI::release                          : MainMusic (000001FABB2D2668)
+[LOG] SoundI::release                          :     MainMusic (000001FA2E21C138)
+[LOG] SoundI::release                          :     MainMusic (000001FA3057D0A8)
+[LOG] SoundI::release                          : MainSea (000001FABB2D5FC8)
+[LOG] SoundI::release                          :     MainSea (000001FA2E21BDF8)
+[LOG] SoundI::release                          :     MainSea (000001FA3057D408)
+[LOG] SystemI::createSound                     : filename = C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001FA29533588 : node = 000001FA313441E0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001FAECD51398.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001FA29533588
+[LOG] SystemI::createSoundInternal             :     Create name='C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     filename = C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 14446400
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 22880
+[LOG] SystemI::createSound                     :     setdata soundi = 000001FA295338E8 : node = 000001FA313440A0
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001FAECD51398.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001FA313442F0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='MENU', format=5, channels=2, frequency=48000, lengthbytes=2630112, lengthpcm=9306021, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001FA29533588
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001FA295338E8
+[LOG] SystemI::createSoundInternal             :     Create name='C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 14446400
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 22880
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001FA313441B0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='MENU', format=5, channels=2, frequency=48000, lengthbytes=2630112, lengthpcm=9306021, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001FA295338E8
+[LOG] SystemI::createSound                     : filename = C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001FA29533078 : node = 000001FA31344320
+[LOG] SystemI::createSound                     : add node to async list : head = 000001FAECD51398.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001FA29533078
+[LOG] SystemI::createSound                     : filename = C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 14446400
+[LOG] SystemI::createSound                     :     setdata soundi = 000001FA29533228 : node = 000001FA31344460
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 22880
+[LOG] SystemI::createSound                     :     add node to async list : head = 000001FAECD51398.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001FA31344430
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='MENU', format=5, channels=2, frequency=48000, lengthbytes=2630112, lengthpcm=9306021, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001FA29533078
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001FA29533228
+[LOG] SystemI::createSoundInternal             :     Create name='C:/Users/giuli/OneDrive/Desktop/Home/ProgettiCloud/Fmod/Sea/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 14446400
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 22880
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001FA31344570
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='MENU', format=5, channels=2, frequency=48000, lengthbytes=2630112, lengthpcm=9306021, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001FA29533228
+[LOG] SoundI::release                          : MENU (000001FA295338E8)
+[LOG] SoundI::release                          :     MENU (000001FA2E21BDF8)
+[LOG] SoundI::release                          :     MENU (000001FA3057D258)
+[LOG] SoundI::release                          : MENU (000001FA29533588)
+[LOG] SoundI::release                          :     MENU (000001FA2E21B778)
+[LOG] SoundI::release                          :     MENU (000001FA3057D0A8)
+[LOG] SoundI::release                          : MENU (000001FA29533228)
+[LOG] SoundI::release                          :     MENU (000001FA2E21C7B8)
+[LOG] SoundI::release                          :     MENU (000001FA3057D5B8)
+[LOG] SoundI::release                          : MENU (000001FA29533078)
+[LOG] SoundI::release                          :     MENU (000001FA2E21B918)
+[LOG] SoundI::release                          :     MENU (000001FA3057D408)
+[LOG] SoundI::release                          :  (000001FABBBE50D8)
+[LOG] SoundI::release                          :     Select (000001FA2E21C618)
+[LOG] SoundI::release                          :  (000001FABBBDB598)
+[LOG] SoundI::release                          :     Creack (000001FA292A7548)
+[LOG] SoundI::release                          :  (000001FABBBDCC98)
+[LOG] SoundI::release                          :     SeagullFast (000001FA292A1088)
+[LOG] SoundI::release                          :  (000001FABBBDB878)
+[LOG] SoundI::release                          :     SeagullSlow (000001FA292A20C8)
+[LOG] SoundI::release                          :  (000001FABBBDB708)
+[LOG] SoundI::release                          :     SeagullLong (000001FA292A5CE8)
+[LOG] SoundI::release                          :  (000001FABBBDD0E8)
+[LOG] SoundI::release                          :     EndGame (000001FA292A5E88)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
@@ -82,3 +251,5 @@
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
