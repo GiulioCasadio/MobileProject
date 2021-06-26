@@ -20,6 +20,11 @@ public class PlayerMovement : MonoBehaviour
     public HealthBar healthBar;
     public GameObject canvas;
 
+    
+    [FMODUnity.EventRef]
+    public string EventCollect;
+    private FMOD.Studio.EventInstance collect;
+
     private Rigidbody rb;
     private float horizontalMove = 0f, verticalMove = 0f;
     private bool chiave;
@@ -35,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
             speed += 1;
         chiave = false;
         PlayerPrefs.SetInt("combo", 0);
+
+        collect = FMODUnity.RuntimeManager.CreateInstance(EventCollect);
     }
 
     // Update is called once per frame
@@ -79,21 +86,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.name.StartsWith("Forziere"))
         {
             if (chiave)
             {
+                collect.start();
                 canvas.GetComponent<MenuManager>().GameWin();
                 Destroy(other.gameObject);
             }
         }
         else if (other.name.StartsWith("Key"))
         {
+            collect.start();
             chiave = true;
             Destroy(other.gameObject);
         }
         else if (other.name.StartsWith("heart"))
         {
+            collect.start();
             canvas.GetComponent<MenuManager>().ImproveBonus(0);
             float lifeMax = GameObject.Find("Player").GetComponentInChildren<ShipManager>().healthBar.GetMaxHealth();
             if (lifeMax < 31)
@@ -106,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (other.name.StartsWith("skull"))
         {
+            collect.start();
             canvas.GetComponent<MenuManager>().ImproveBonus(1);
             int combo = PlayerPrefs.GetInt("combo") < 2 ? PlayerPrefs.GetInt("combo") + 1 : PlayerPrefs.GetInt("combo");
             PlayerPrefs.SetInt("combo", combo);
@@ -113,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (other.name.StartsWith("timone"))
         {
+            collect.start();
             canvas.GetComponent<MenuManager>().ImproveBonus(2);
             if (speed < 6.5f) 
                 speed+=0.5f;

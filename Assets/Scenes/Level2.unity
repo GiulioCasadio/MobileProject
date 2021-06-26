@@ -22710,6 +22710,7 @@ MonoBehaviour:
   fireButton: {fileID: 1801564658}
   healthBar: {fileID: 1421953827}
   canvas: {fileID: 931317570}
+  EventCollect: event:/MainSeaSound/Sfx/Collect
 --- !u!1 &1841857513
 GameObject:
   m_ObjectHideFlags: 0

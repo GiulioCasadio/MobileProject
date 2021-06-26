@@ -14,12 +14,11 @@ public class ShipManager : MonoBehaviour
     public ParticleSystem[] fire;
     private bool isOnFire=false;
 
-    [Header("Bonus")]
-    public GameObject[] bonus;
-
     [FMODUnity.EventRef]
     public string EventOnFire;
 
+    [Header("Bonus")]
+    public GameObject[] bonus;
 
     private Animator anim;
     private bool hasGenereated=false;
